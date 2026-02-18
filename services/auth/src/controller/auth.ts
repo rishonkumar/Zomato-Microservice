@@ -29,7 +29,7 @@ export const loginUser = TryCatch(async (req, res) => {
             name,
             email,
             image
-        })
+        })  
     }
 
     const token = jwt.sign({ user }, process.env.JWT_SEC as string, {
