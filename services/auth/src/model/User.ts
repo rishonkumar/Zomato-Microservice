@@ -19,7 +19,7 @@ const schema: Schema<Iuser> = new Schema({
     },
     image: {
         type: String,
-        required: true
+        required: false
     },
     role: {
         type: String,
