@@ -39,7 +39,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 
     //it will be called whenver page is called
     useEffect(() => {
-        fetchUser()
+        fetchUser() // Check if user is logged in when app starts
     }, [])
 
     return <AppContext.Provider value={{ isAuth, setIsAuth, setLoading, setUser, user, loading }}>{children}</AppContext.Provider>
