@@ -20,8 +20,9 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     async function fetchUser() {
         try {
             const token = localStorage.getItem("token")
+            console.log("Inside App context 23")
 
-            const { data } = await axios.get(`${authService}/api/v1/auth`, {
+            const { data } = await axios.get(`${authService}/api/v1/auth/me`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

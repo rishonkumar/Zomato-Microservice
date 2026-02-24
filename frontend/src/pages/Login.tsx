@@ -5,12 +5,14 @@ import { authService } from "../main"
 import toast from "react-hot-toast"
 import { useGoogleLogin } from '@react-oauth/google';
 import { FcGoogle } from "react-icons/fc"
+import { userAppData } from "../context/AppContext"
 
 
 const Login = () => {
 
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const { setUser, setIsAuth } = userAppData()
 
     const responsGoogle = async (authResult: any) => {
         setLoading(true)
@@ -20,8 +22,11 @@ const Login = () => {
             })
 
             localStorage.setItem("token", res.data.token)
+            setUser(res.data.user) 
             toast.success(res.data.message)
+            console.log("Succesfully logged in")
             setLoading(false)
+            setIsAuth(true)
             navigate("/")
         } catch (err) {
             console.log(err)
