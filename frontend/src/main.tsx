@@ -7,6 +7,7 @@ import { AppProvider } from './context/AppContext.tsx';
 
 
 export const authService = "http://localhost:5030"
+export const restaurantService = "http://localhost:5050"
 
 
 createRoot(document.getElementById('root')!).render(

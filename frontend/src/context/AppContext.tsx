@@ -62,6 +62,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                 })
 
                 setCity(data.address.city || data.address.town || data.address.village || "Your Location")
+                setLoadingLocation(false)
             } catch (err) {
                 setLoacation({
                     latitude,
@@ -69,6 +70,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                     formattedAdress: "current location "
                 })
                 setCity("Failed to load")
+                setLoadingLocation(false)
             }
         })
 
