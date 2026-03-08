@@ -20,6 +20,7 @@ const Restaurant = () => {
 
             if (data.token) {
                 localStorage.setItem("token", data.token)
+                window.location.reload()
             }
         } catch (err) {
             console.log(err)
@@ -36,7 +37,7 @@ const Restaurant = () => {
     if (loading) return (<div className="flex min-h-screen items-center justify-center"><p className="bg-gray-500">Loading you res...</p></div>)
 
     if (!restaurant) {
-        return <AddRestaurant />
+        return <AddRestaurant fetchMyRes={fetchMyRes} />
     }
     return (
         <div>
