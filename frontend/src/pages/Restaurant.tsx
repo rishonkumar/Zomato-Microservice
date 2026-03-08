@@ -3,6 +3,7 @@ import type { IRestaurant } from "../types"
 import { restaurantService } from "../main"
 import axios from "axios"
 import AddRestaurant from "../components/AddRestaurant"
+import RestaurantProfile from "../components/RestaurantProfile"
 
 const Restaurant = () => {
 
@@ -40,8 +41,8 @@ const Restaurant = () => {
         return <AddRestaurant fetchMyRes={fetchMyRes} />
     }
     return (
-        <div>
-            fhlirfrevlu
+        <div className="min-h-screen bg-gray-50 px-4 py-6 space-y-6">
+            <RestaurantProfile restaurant={restaurant} onUpdate={setRestaurant} isSeller={true} />
         </div>
     )
 }
